@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media print {
+    /* Hide everything except the content to print */
+    body * {
+      visibility: hidden;
+    }
+  
+    #contentToSave, #contentToSave * {
+      visibility: visible;
+    }
+  
+    /* Optionally, remove any page numbers and header/footer from the print */
+    @page {
+      margin: 0;
+    }
+  }
